@@ -41,9 +41,8 @@ public class ClientService extends HttpServlet {
 	public void init() throws ServletException {
 		try {
 			Class.forName("org.hsqldb.jdbcDriver");
-			c = DriverManager.getConnection("jdbc:hsqldb:file:/home/marcello/dev/java/top-esp-eng-soft/mirrorfashion_jee/mirrorfashion/src/main/webapp/db/simplehr", "sa", "");
-			//"jdbc:hsqldb:file:/home/marcello/dev/java/top-esp-eng-soft/mirrorfashion_jee/mirrorfashion/src/main/webapp/db/simplehr"
-			//"jdbc:hsqldb:file:/main/webapp/db/simplehr"
+			c = DriverManager.getConnection("jdbc:hsqldb:file:/main/webapp/db/simplehr", "sa", "");
+			
 			clienteManager = new ClienteManager(c);
 			System.out.println("Schema.: " + c.getSchema());
 			super.init();
